@@ -1,9 +1,9 @@
 @import "flexbox";
 
 .maze{
-    height: 90vh;
-    width: 100vw;
     @include flexbox(column, center, space-between);
+    padding: 1rem;
+    flex: 1;
 }
 .mazeSetting{
     width: 50vw;

@@ -2,9 +2,15 @@ import React from 'react';
 
 import '../styles/board.css';
 
-const Square = () => {
+const Square = props => {
+    const { x, y } = props;
     return (
-        <div className='square'></div>
+        <div 
+        className='square'
+        onClick={()=> console.log({obj:"Square",x,y})}
+        >
+
+        </div>
     );
 };
 

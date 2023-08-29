@@ -1,1 +1,1 @@
-{"version":3,"sources":["maze.scss","flexbox.scss","maze.css"],"names":[],"mappings":"AAEA;EACI,YAAA;EACA,YAAA;ECHA,aAAA;EACA,sBDGiB;ECFjB,mBDEyB;ECDzB,8BDCiC;AEErC;;AFAA;EACI,WAAA;AEGJ","file":"maze.css"}
+{"version":3,"sources":["maze.scss","flexbox.scss","maze.css"],"names":[],"mappings":"AAEA;ECDI,aAAA;EACA,sBDCiB;ECAjB,mBAAA;EACA,8BDDiC;EACjC,aAAA;EACA,OAAA;AEEJ;;AFAA;EACI,WAAA;AEGJ","file":"maze.css"}

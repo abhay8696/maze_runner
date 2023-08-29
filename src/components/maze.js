@@ -12,16 +12,16 @@ const Maze = () => {
             <div></div>
             <Board size = {size}/>
             <div className='mazeSetting'>
-                <p>Size: {size}</p>
+                <span>Size: {size} x {size}</span>
                 <Slider
                     aria-label="Temperature"
                     defaultValue={size}
                     // getAriaValueText={valuetext}
                     valueLabelDisplay="auto"
-                    step={2}
-                    // marks
-                    min={8}
-                    max={20}
+                    step={1}
+                    marks
+                    min={4}
+                    max={12}
                     onChange={e=> setSize(e.target.value)}
                 />
             </div>

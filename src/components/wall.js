@@ -3,9 +3,14 @@ import React from 'react';
 import '../styles/board.css';
 
 const Wall = props => {
-    const { type } = props
+    const { type, x, y } = props
     return (
-        <div className={`wall ${type}`}></div>
+        <div 
+        className={`wall ${type}`}
+        onClick={()=> console.log({obj:"Wall",x,y})}
+        >
+
+        </div>
     );
 };
 
