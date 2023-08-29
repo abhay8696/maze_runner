@@ -1,0 +1,33 @@
+@import 'flexbox'; 
+
+.board{
+    // background-color: red;
+
+    @include flexbox(column, center, center)
+}
+
+.row{
+    @include flexbox("", center, center)
+}
+.wall{
+    background-color: black;
+}
+.dummyWall{
+    width: 0.1rem;
+    height: 0.1rem;
+}
+.verticalWall{
+    height: 1rem;
+    width: 0.1rem;
+}
+.horizontalWall{
+    width: 1rem;
+    height: 0.1rem;
+}
+.square{
+    width: 1rem;
+    height: 1rem;
+    background-color: rgba(255, 255, 255, 0.363);
+    // border: 1px solid black;
+    cursor: pointer;
+}
