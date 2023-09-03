@@ -5,17 +5,17 @@ import Square from './square';
 import Wall from './wall';
 const Board = props => {
     //props
-    const { size, verticalWalls, horizontalWalls } = props;
+    const { size, standing_Vertical_Walls, standing_Horizontal_Walls } = props;
 
-    console.log(verticalWalls, horizontalWalls)
+    console.log(standing_Vertical_Walls, standing_Horizontal_Walls)
     const createBoard = size=> {
         let arr = [];
 
         let createSquareRow = i=> {
             let row = [], type = "verticalWall"
             for(let j = 0; j < (size*2)-1; j++){
-                if(verticalWalls && verticalWalls.has(`${i}-${j}`)){
-                    type = "verticalWall builtWall"
+                if(standing_Vertical_Walls && standing_Vertical_Walls.has(`${i}-${j}`)){
+                    type = "verticalWall standingWall"
                 }else type = "verticalWall";
 
                 if(j%2 === 0) row.push(<Square x={i} y={j}/>);
@@ -27,8 +27,8 @@ const Board = props => {
             let row = [];
             let type= 'horizontalWall'
             for(let j = 0; j < (size*2)-1; j++){
-                if(horizontalWalls && horizontalWalls.has(`${i}-${j}`)){
-                    type = "horizontalWall builtWall"
+                if(standing_Horizontal_Walls && standing_Horizontal_Walls.has(`${i}-${j}`)){
+                    type = "horizontalWall standingWall"
                 }else type = "horizontalWall";
 
                 if(j%2 === 0) row.push(<Wall type={type} x={i} y={j}/>)

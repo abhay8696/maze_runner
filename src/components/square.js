@@ -9,7 +9,7 @@ const Square = props => {
         className='square'
         onClick={()=> console.log({obj:"Square",x,y})}
         >
-            {/* {x}-{y} */}
+            {x}-{y}
         </div>
     );
 };

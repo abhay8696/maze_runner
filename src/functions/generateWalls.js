@@ -36,7 +36,7 @@ export const generateVerticalWalls = (size, maxWalls)=> {
         yCord.push(randomOdd(0, size));
     }
 
-    console.log(xCord, yCord);
+    // console.log(xCord, yCord);
     for(let i = 0; i < xCord.length; i++){
         map.set(`${xCord[i]}-${yCord[i]}`, `${xCord[i]}-${yCord[i]}`);
     }
@@ -60,7 +60,7 @@ export const generateHorizontalWalls = (size, maxWalls)=> {
         yCord.push(randomEven(0, size));
     }
 
-    console.log(xCord, yCord);
+    // console.log(xCord, yCord);
     for(let i = 0; i < xCord.length; i++){
         map.set(`${xCord[i]}-${yCord[i]}`, `${xCord[i]}-${yCord[i]}`);
     }

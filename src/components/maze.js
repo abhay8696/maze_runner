@@ -32,7 +32,7 @@ const Maze = () => {
     return (
         <main className='maze'>
             <div></div>
-            <Board size = {size} verticalWalls={verticalWalls} horizontalWalls={horizontalWalls}/>
+            <Board size = {size} standing_Vertical_Walls={verticalWalls} standing_Horizontal_Walls={horizontalWalls}/>
             <div className='mazeSetting'>
                 <span>Size: {size} x {size}</span>
                 <Slider
