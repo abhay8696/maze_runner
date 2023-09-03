@@ -1,16 +1,38 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Board from './board';
+
+//functions
+import { generateHorizontalWalls, generateVerticalWalls } from '../functions/generateWalls'
 
 import { Slider } from '@mui/material';
 import '../styles/maze.css';
 
 const Maze = () => {
-    const [size, setSize] = useState(8);
+    const [size, setSize] = useState(12);
+    const [verticalWalls, setVerticalWalls] = useState(undefined);
+    const [horizontalWalls, setHorizontalWalls] = useState(undefined);
+
+
+    const createWalls = ()=> {
+        let difficulty = 12;
+        if(size >= 12 && size <= 16) difficulty = 8;
+        if(size < 12) difficulty = 6;
+        let max = difficulty * size - difficulty;
+        setVerticalWalls(generateVerticalWalls(size, max));
+        setHorizontalWalls(generateHorizontalWalls(size, max));
+    }
+    
+    useEffect(()=> {
+        console.log("useeffect")
+        createWalls();
+    }, [size])
+
+    
 
     return (
         <main className='maze'>
             <div></div>
-            <Board size = {size}/>
+            <Board size = {size} verticalWalls={verticalWalls} horizontalWalls={horizontalWalls}/>
             <div className='mazeSetting'>
                 <span>Size: {size} x {size}</span>
                 <Slider
@@ -20,8 +42,8 @@ const Maze = () => {
                     valueLabelDisplay="auto"
                     step={1}
                     marks
-                    min={4}
-                    max={12}
+                    min={9}
+                    max={20}
                     onChange={e=> setSize(e.target.value)}
                 />
             </div>

@@ -10,24 +10,34 @@
     @include flexbox("", center, center)
 }
 .wall{
-    // background-color: black;
+    background-color: #ffffff50;
+    // background-color: #282c34;
+}
+.builtWall{
+    background-color: #f30101;
+    // background-color: #fff;
 }
 .dummyWall{
     width: 0.2rem;
     height: 0.2rem;
+    margin: 1px 1px;
 }
 .verticalWall{
     height: 1.5rem;
     width: 0.2rem;
+    margin: auto 1px;
 }
 .horizontalWall{
     width: 1.5rem;
     height: 0.2rem;
+    margin: 1px auto;
 }
 .square{
     width: 1.5rem;
     height: 1.5rem;
-    background-color: rgba(255, 255, 255, 0.363);
+    background-color: #282c34;
     border-radius: 0.1rem;
     cursor: pointer;
+    @include flexbox('', center, center);
+    font-size: 0.5rem;
 }
