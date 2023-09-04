@@ -9,10 +9,10 @@ import { Slider } from '@mui/material';
 import '../styles/maze.css';
 
 const Maze = () => {
-    const [size, setSize] = useState(12);
+    const [size, setSize] = useState(15);
     const [verticalWalls, setVerticalWalls] = useState(undefined);
     const [horizontalWalls, setHorizontalWalls] = useState(undefined);
-    const [followedPath, setFollowedPath] = useState([]);
+    const [followedPath, setFollowedPath] = useState({path: new Set(), msg:null, visited: new Set()});
 
 
     const createWalls = ()=> {

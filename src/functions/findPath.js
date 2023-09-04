@@ -2,7 +2,8 @@
 
 export const findPath = (x, y, visited, v_walls, h_walls, boardSize, correctPath)=> {
     // 1.
-    if(x === 0) return {correctPath, msg: true};
+    if(x === 0) return {correctPath, visited, msg: true};
+    correctPath.add(`${x}-${y}`);
     // 2.
     visited.add(`${x}-${y}`);
 
@@ -24,10 +25,11 @@ export const findPath = (x, y, visited, v_walls, h_walls, boardSize, correctPath
             // console.log(visited);
             if(goTop.msg === true) {
                 // console.log("up",x-2,y)
-                correctPath.push(topSqaure)
-                return {correctPath, msg: true};
+                correctPath.add(topSqaure)
+                return {correctPath, visited, msg: true};
             }
         }
+        correctPath.clear();
         return checkLeft();
     }
 
@@ -36,10 +38,11 @@ export const findPath = (x, y, visited, v_walls, h_walls, boardSize, correctPath
             let goLeft = findPath(x, y-2, visited, v_walls, h_walls, boardSize, correctPath);
             if(goLeft.msg === true) {
                 // console.log("left",x,y-2)
-                correctPath.push(leftSqaure)
-                return {correctPath, msg: true};
+                correctPath.add(leftSqaure)
+                return {correctPath, visited, msg: true};
             }
         }
+        correctPath.clear();
         return checkRight();
     }
     const checkRight = ()=>{
@@ -47,10 +50,11 @@ export const findPath = (x, y, visited, v_walls, h_walls, boardSize, correctPath
             let goRight = findPath(x, y+2, visited, v_walls, h_walls, boardSize, correctPath);
             if(goRight.msg === true) {
                 // console.log("right",x,y+2)
-                correctPath.push(rightSqaure)
-                return {correctPath, msg: true};
+                correctPath.add(rightSqaure)
+                return {correctPath, visited, msg: true};
             }
         }
+        correctPath.clear();
         return checkBottom();
     }
     const checkBottom = ()=>{
@@ -58,11 +62,12 @@ export const findPath = (x, y, visited, v_walls, h_walls, boardSize, correctPath
             let goBottom = findPath(x+2, y, visited, v_walls, h_walls, boardSize, correctPath);
             if(goBottom.msg === true) {
                 // console.log("down",x+2,y)
-                correctPath.push(bottomSqaure);
-                return {correctPath, msg: true};
+                correctPath.add(bottomSqaure);
+                return {correctPath, visited, msg: true};
             }
         }
-        return {correctPath, msg: false};
+        
+        return {correctPath, visited, msg: false};
     }
 
     return checkTop();

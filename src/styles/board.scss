@@ -18,18 +18,18 @@
     // background-color: #fff;
 }
 .dummyWall{
-    width: 1px;
-    height: 1px;
+    width: 2px;
+    height: 2px;
     // margin: 1px 1px;
 }
 .verticalWall{
     height: 1.5rem;
-    width: 1px;
+    width: 2px;
     // margin: auto 1px;
 }
 .horizontalWall{
     width: 1.5rem;
-    height: 1px;
+    height: 2px;
     // margin: 1px auto;
 }
 .square{
@@ -40,4 +40,16 @@
     cursor: pointer;
     @include flexbox('', center, center);
     font-size: 0.5rem;
+}
+.square:hover{
+    background-color: rgba(255, 166, 0, 0.404);
+}
+.steppedSquare{
+    background-color: rgba(0, 128, 0, 0.404);
+}
+.topSqaure, .topWall{
+    background-color: rgba(0, 128, 0, 0.596);
+}
+.steppedSquare-red{
+    background-color: rgb(255, 0, 0, 0.404);
 }
