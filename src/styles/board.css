@@ -13,7 +13,7 @@
 }
 
 .wall {
-  background-color: rgba(255, 255, 255, 0.3137254902);
+  background-color: #282c34;
 }
 
 .standingWall {
@@ -21,21 +21,18 @@
 }
 
 .dummyWall {
-  width: 0.2rem;
-  height: 0.2rem;
-  margin: 1px 1px;
+  width: 1px;
+  height: 1px;
 }
 
 .verticalWall {
   height: 1.5rem;
-  width: 0.2rem;
-  margin: auto 1px;
+  width: 1px;
 }
 
 .horizontalWall {
   width: 1.5rem;
-  height: 0.2rem;
-  margin: 1px auto;
+  height: 1px;
 }
 
 .square {

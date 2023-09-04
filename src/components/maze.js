@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Board from './board';
+import { FollowedPathContext } from '../contexts/followedPathContext';
 
 //functions
 import { generateHorizontalWalls, generateVerticalWalls } from '../functions/generateWalls'
@@ -11,6 +12,7 @@ const Maze = () => {
     const [size, setSize] = useState(12);
     const [verticalWalls, setVerticalWalls] = useState(undefined);
     const [horizontalWalls, setHorizontalWalls] = useState(undefined);
+    const [followedPath, setFollowedPath] = useState([]);
 
 
     const createWalls = ()=> {
@@ -25,28 +27,30 @@ const Maze = () => {
     useEffect(()=> {
         console.log("useeffect")
         createWalls();
-    }, [size])
+    }, [size]);
 
     
 
     return (
         <main className='maze'>
-            <div></div>
-            <Board size = {size} standing_Vertical_Walls={verticalWalls} standing_Horizontal_Walls={horizontalWalls}/>
-            <div className='mazeSetting'>
-                <span>Size: {size} x {size}</span>
-                <Slider
-                    aria-label="Temperature"
-                    defaultValue={size}
-                    // getAriaValueText={valuetext}
-                    valueLabelDisplay="auto"
-                    step={1}
-                    marks
-                    min={9}
-                    max={20}
-                    onChange={e=> setSize(e.target.value)}
-                />
-            </div>
+            <FollowedPathContext.Provider value={[followedPath, setFollowedPath]}>
+                <div></div>
+                <Board size = {size} standing_Vertical_Walls={verticalWalls} standing_Horizontal_Walls={horizontalWalls}/>
+                <div className='mazeSetting'>
+                    <span>Size: {size} x {size}</span>
+                    <Slider
+                        aria-label="Temperature"
+                        defaultValue={size}
+                        // getAriaValueText={valuetext}
+                        valueLabelDisplay="auto"
+                        step={1}
+                        marks
+                        min={9}
+                        max={20}
+                        onChange={e=> setSize(e.target.value)}
+                    />
+                </div>
+            </FollowedPathContext.Provider>
         </main>
     );
 };

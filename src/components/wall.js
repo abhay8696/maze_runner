@@ -7,7 +7,9 @@ const Wall = props => {
     return (
         <div 
         className={`wall ${type}`}
-        onClick={()=> console.log({obj:"Wall",x,y})}
+        onClick={()=> {
+            console.log({obj:"Wall",x,y})
+        }}
         >
 
         </div>
