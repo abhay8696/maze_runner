@@ -12,10 +12,10 @@ const Square = props => {
 
     const startRunning = (x,y)=>{
         // let visited = new Set();
-        let { correctPath, msg, visited } = findPath(x, y, new Set(), standing_Vertical_Walls, standing_Horizontal_Walls, size, new Set());
+        let { correctPath, msg, visited, crossedWalls } = findPath(x, y, new Set(), standing_Vertical_Walls, standing_Horizontal_Walls, size, new Set(), new Set());
         // console.log("clicked", correctPath)
         if(msg) correctPath.add(`${x}-${y}`);
-        setFollowedPath({path: correctPath, msg, visited});
+        setFollowedPath({path: correctPath, msg, visited, crossedWalls});
     }
 
     const createSquare = ()=> {

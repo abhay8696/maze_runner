@@ -12,7 +12,7 @@ const Maze = () => {
     const [size, setSize] = useState(15);
     const [verticalWalls, setVerticalWalls] = useState(undefined);
     const [horizontalWalls, setHorizontalWalls] = useState(undefined);
-    const [followedPath, setFollowedPath] = useState({path: new Set(), msg:null, visited: new Set()});
+    const [followedPath, setFollowedPath] = useState({path: new Set(), msg:null, visited: new Set(), crossedWalls: new Set()});
 
 
     const createWalls = ()=> {
@@ -27,6 +27,8 @@ const Maze = () => {
     useEffect(()=> {
         console.log("useeffect")
         createWalls();
+        //clear data
+        setFollowedPath({path: new Set(), msg:null, visited: new Set(), crossedWalls: new Set()})
     }, [size]);
 
     
@@ -46,7 +48,7 @@ const Maze = () => {
                         step={1}
                         marks
                         min={9}
-                        max={20}
+                        max={50}
                         onChange={e=> setSize(e.target.value)}
                     />
                 </div>
