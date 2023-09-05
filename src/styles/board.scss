@@ -1,49 +1,58 @@
 @import 'flexbox'; 
 
+
 .board{
-    // background-color: red;
-    // transform: scale(2);
-    @include flexbox(column, center, center);
     border: 2px solid black;
     border-top: none;
+    @include flexbox(column, stretch, stretch);
+    max-height: 80vh;
+    aspect-ratio: 1;
 }
 
+
 .row{
-    @include flexbox("", center, center)
+    width: 100%;
+    @include flexbox(row, stretch, stretch);
 }
-.wall{
-    // background-color: #ffffff50;
-    // background-color: #282c34;
+
+.square{
+    // background-color: red;
+    height: 100%;
+    cursor: pointer;
+    @include flexbox('', center, center);
+    font-size: 0.5rem;
+    z-index: 5;
+}
+
+.wallRow{
+    max-height: 2px;
+    max-width: 100%;
+}
+
+.verticalWall{
+    height: 100%;
+    max-width: 2px;
+}
+
+.horizontalWall{
+    max-height: 2px;
+    width: 50px;
+}
+
+.row, .square, .horizontalWall, .verticalWall, .horizontalWall{
+    flex: 1;
 }
 .standingWall{
     background-color: #313131;
     // background-color: #fff;
 }
 .dummyWall{
-    width: 2px;
-    height: 2px;
+    max-width: 2px;
+    max-height: 2px;
     // margin: 1px 1px;
     // background-color: #000;
 }
-.verticalWall{
-    height: 1.5rem;
-    width: 2px;
-    // margin: auto 1px;
-}
-.horizontalWall{
-    width: 1.5rem;
-    height: 2px;
-    // margin: 1px auto;
-}
-.square{
-    width: 1.5rem;
-    height: 1.5rem;
-    // background-color: #282c34;
-    // border-radius: 0.1rem;
-    cursor: pointer;
-    @include flexbox('', center, center);
-    font-size: 0.5rem;
-}
+
 .square:hover{
     background-color: rgba(255, 166, 0, 0.404);
 }
@@ -55,4 +64,17 @@
 // }
 .steppedSquare-red{
     background-color: rgb(255, 0, 0, 0.404);
+}
+
+
+@media screen and (min-width: 730px){
+    .board{
+        max-width: 50vw;
+    }
+}
+
+@media screen and (max-width: 729px){
+    .board{
+        max-width: 75vw;
+    }
 }

@@ -81,6 +81,7 @@ export const findPath = (x, y, visited, v_walls, h_walls, boardSize, correctPath
 
 
 
+
 /*
 
 0. start (x,y, visited) 

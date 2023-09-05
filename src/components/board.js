@@ -48,12 +48,18 @@ const Board = props => {
         }
 
         for(let i = 0; i < (size*2)-1; i++){
-            let rowItems = [];
+            let rowItems = [], rowType;
             
-            if(i%2 === 0) rowItems.push(createSquareRow(i));
-            else rowItems.push(createWallRow(i));
+            if(i%2 === 0) {
+                rowItems.push(createSquareRow(i));
+                rowType = 'squareRow';
+            }
+            else {
+                rowItems.push(createWallRow(i));
+                rowType = 'wallRow';
+            }
 
-            let row = <div className={`row`}>{rowItems}</div>
+            let row = <div className={`row ${rowType}`}>{rowItems}</div>
             arr.push(row)
         }
 
