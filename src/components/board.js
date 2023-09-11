@@ -7,9 +7,9 @@ const Board = props => {
     //props
     const { size, standing_Vertical_Walls, standing_Horizontal_Walls } = props;
 
-    console.log(standing_Vertical_Walls, standing_Horizontal_Walls)
+    // console.log(standing_Vertical_Walls, standing_Horizontal_Walls)
     const createBoard = ()=> {
-        let arr = [];
+        let arr = [], sqrCount = 0;
 
         let createSquareRow = i=> {
             let row = [], type = "verticalWall"
@@ -19,6 +19,7 @@ const Board = props => {
                 }else type = "verticalWall";
 
                 if(j%2 === 0){ 
+                    sqrCount++;
                     row.push(
                         <Square 
                         x={i} 
@@ -62,7 +63,7 @@ const Board = props => {
             let row = <div className={`row ${rowType}`}>{rowItems}</div>
             arr.push(row)
         }
-
+        // console.log('boardSize: ', size, "sqrCount: ", sqrCount)
         return arr;
     }
     return (

@@ -13,7 +13,8 @@ const Square = props => {
     const startRunning = (x,y)=>{
         // let visited = new Set();
         let { correctPath, msg, visited, crossedWalls } = findPath(x, y, new Set(), standing_Vertical_Walls, standing_Horizontal_Walls, size, new Set(), new Set());
-        // console.log("clicked", correctPath)
+        // if(!msg) console.log("failed. ratio: ", (visited.size/(size*size)*100));
+        console.log("clicked", msg, visited)
         if(msg) correctPath.add(`${x}-${y}`);
         setFollowedPath({path: correctPath, msg, visited, crossedWalls});
     }

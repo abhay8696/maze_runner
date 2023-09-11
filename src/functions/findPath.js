@@ -49,6 +49,7 @@ export const findPath = (x, y, visited, v_walls, h_walls, boardSize, correctPath
         return checkRight();
     }
     const checkRight = ()=>{
+        // console.log("checking right from, ", x,y);
         if(!v_walls.has(rightWall) && !visited.has(rightSqaure) && y+2 <= ((boardSize * 2) -2)) {
             let goRight = findPath(x, y+2, visited, v_walls, h_walls, boardSize, correctPath, crossedWalls);
             if(goRight.msg === true) {
@@ -57,7 +58,9 @@ export const findPath = (x, y, visited, v_walls, h_walls, boardSize, correctPath
                 crossedWalls.add(rightWall);
                 return {correctPath, visited, crossedWalls, msg: true};
             }
+            // else console.log("went right found dead end", x,y, "wall: ", v_walls.has(rightWall), "square: ", visited.has(rightSqaure))
         }
+        // else console.log("no right way", "wall: ", v_walls.has(rightWall), "square: ", visited.has(rightSqaure))
         correctPath.clear();
         return checkBottom();
     }
@@ -74,7 +77,7 @@ export const findPath = (x, y, visited, v_walls, h_walls, boardSize, correctPath
         
         return {correctPath, visited, crossedWalls, msg: false};
     }
-
+    correctPath.clear();
     return checkTop();
 }
 
