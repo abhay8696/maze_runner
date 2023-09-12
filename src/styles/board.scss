@@ -57,12 +57,14 @@
 .square:hover{
     background-color: rgba(255, 166, 0, 0.404);
 }
-.steppedSquare, .topSqaure, .crossedWall, .topWall{
+.topSqaure, .crossedWall, .topWall{
     background-color: rgba(0, 128, 0, 0.404);
 }
-// .topSqaure, .topWall{
-//     background-color: rgba(0, 128, 0, 0.596);
-// }
+.steppedSquare{
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+    animation: appear 100ms ease forwards ;
+    animation-fill-mode: forwards;
+}
 .steppedSquare-red{
     background-color: rgb(255, 0, 0, 0.404);
 }
@@ -77,5 +79,14 @@
 @media screen and (max-width: 729px){
     .board{
         max-width: 75vw;
+    }
+}
+
+@keyframes appear {
+    from{
+        background-color: rgba(255, 166, 0, 0.404);
+    }
+    to{
+        background-color: rgba(0, 128, 0, 0.404);
     }
 }

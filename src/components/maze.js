@@ -37,7 +37,7 @@ const Maze = () => {
                 <div></div>
                 <Board size = {size} standing_Vertical_Walls={verticalWalls} standing_Horizontal_Walls={horizontalWalls}/>
                 <div className='mazeSetting'>
-                    <span>Difficulty: {size} x {size}</span>
+                    <span>{size} x {size}</span>
                     <Slider
                         aria-label="Temperature"
                         defaultValue={size}

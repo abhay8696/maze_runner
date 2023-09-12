@@ -3,7 +3,7 @@
 export const findPath = (x, y, visited, v_walls, h_walls, boardSize, correctPath, crossedWalls)=> {
     // 1.
     if(x === 0) return {correctPath, visited, crossedWalls, msg: true};
-    correctPath.add(`${x}-${y}`);
+    if(!correctPath.has(`${x}-${y}`)) correctPath.set(`${x}-${y}`, correctPath.size+1);
     // 2.
     visited.add(`${x}-${y}`);
 
@@ -25,7 +25,7 @@ export const findPath = (x, y, visited, v_walls, h_walls, boardSize, correctPath
             // console.log(visited);
             if(goTop.msg === true) {
                 // console.log("up",x-2,y)
-                correctPath.add(topSqaure)
+                if(!correctPath.has(topSqaure)) correctPath.set(topSqaure, correctPath.size+1)
                 crossedWalls.add(topWall);
                 return {correctPath, visited, crossedWalls, msg: true};
             }
@@ -40,7 +40,7 @@ export const findPath = (x, y, visited, v_walls, h_walls, boardSize, correctPath
             let goLeft = findPath(x, y-2, visited, v_walls, h_walls, boardSize, correctPath, crossedWalls);
             if(goLeft.msg === true) {
                 // console.log("left",x,y-2)
-                correctPath.add(leftSqaure)
+                if(!correctPath.has(leftSqaure)) correctPath.set(leftSqaure, correctPath.size+1)
                 crossedWalls.add(leftWall);
                 return {correctPath, visited, crossedWalls, msg: true};
             }
@@ -54,7 +54,7 @@ export const findPath = (x, y, visited, v_walls, h_walls, boardSize, correctPath
             let goRight = findPath(x, y+2, visited, v_walls, h_walls, boardSize, correctPath, crossedWalls);
             if(goRight.msg === true) {
                 // console.log("right",x,y+2)
-                correctPath.add(rightSqaure)
+                if(!correctPath.has(rightSqaure)) correctPath.set(rightSqaure, correctPath.size+1)
                 crossedWalls.add(rightWall);
                 return {correctPath, visited, crossedWalls, msg: true};
             }
@@ -69,7 +69,7 @@ export const findPath = (x, y, visited, v_walls, h_walls, boardSize, correctPath
             let goBottom = findPath(x+2, y, visited, v_walls, h_walls, boardSize, correctPath, crossedWalls);
             if(goBottom.msg === true) {
                 // console.log("down",x+2,y)
-                correctPath.add(bottomSqaure);
+                if(!correctPath.has(bottomSqaure)) correctPath.set(bottomSqaure, correctPath.size+1);
                 crossedWalls.add(bottomWall);
                 return {correctPath, visited, crossedWalls, msg: true};
             }
