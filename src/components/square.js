@@ -12,14 +12,14 @@ const Square = props => {
 
     const startRunning = (x,y)=>{
         //clear previous path  
-        setFollowedPath({path: new Set(), msg:null, visited: new Set(), crossedWalls: new Set()})
+        setFollowedPath({path: new Set(), msg:null, visited: new Set(), crossedWalls: new Map()})
 
         // let visited = new Set();
-        let { correctPath, msg, visited, crossedWalls } = findPath(x, y, new Set(), standing_Vertical_Walls, standing_Horizontal_Walls, size, new Map(), new Set());
+        let { correctPath, msg, visited, crossedWalls } = findPath(x, y, new Set(), standing_Vertical_Walls, standing_Horizontal_Walls, size, new Map(), new Map());
         // if(!msg) console.log("failed. ratio: ", (visited.size/(size*size)*100));
         
         if(msg && !correctPath.has(`${x}-${y}`)) correctPath.set(`${x}-${y}`, correctPath.size+1);
-        console.log(correctPath)
+        // console.log(correctPath)
 
         setFollowedPath({path: correctPath, msg, visited, crossedWalls});
     }
@@ -39,6 +39,7 @@ const Square = props => {
             className={`square ${type} delay-${delay}`}
             onClick={()=> startRunning(x,y)}
             style={{animationDelay: `${delay}00ms`}}
+            key={x-y}
             >
                 {/* {x}-{y} */}
             </div>

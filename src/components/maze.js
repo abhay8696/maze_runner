@@ -48,6 +48,7 @@ const Maze = () => {
                         min={4}
                         max={50}
                         onChange={e=> setSize(e.target.value)}
+                        // color="danger"
                     />
                 </div>
             </FollowedPathContext.Provider>

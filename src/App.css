@@ -1,14 +1,16 @@
 .App {
   text-align: center;
-  background-color: #967a7a;
-  background-color: rgba(0, 128, 0, 0.404);
+  /* background-color: #967a7a; */
+  /* background-color: rgba(0, 128, 0, 0.404); */
+  background-color: #A4BE7B;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   /* font-size: calc(10px + 2vmin); */
-  color: white;
+  color: rgba(0, 128, 0, 0.75);;
   height: 100vh;
+  font-family: 'Mooli', sans-serif;
 }
 *{
   box-sizing: border-box;

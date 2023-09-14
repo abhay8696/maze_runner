@@ -1,8 +1,11 @@
 @import 'flexbox'; 
 
+$wallThicknes : 0.8px;
+$wallColor: #000;
+$correctPathColor: rgba(0, 128, 0, 0.75);
 
 .board{
-    border: 2px solid black;
+    border: $wallThicknes solid $wallColor;
     border-top: none;
     @include flexbox(column, stretch, stretch);
     max-height: 80vh;
@@ -26,17 +29,17 @@
 }
 
 .wallRow{
-    max-height: 2px;
+    max-height: $wallThicknes;
     max-width: 100%;
 }
 
 .verticalWall{
     height: 100%;
-    max-width: 2px;
+    max-width: $wallThicknes;
 }
 
 .horizontalWall{
-    max-height: 2px;
+    max-height: $wallThicknes;
     width: 50px;
 }
 
@@ -44,12 +47,12 @@
     flex: 1;
 }
 .standingWall{
-    background-color: #313131;
+    background-color: $wallColor;
     // background-color: #fff;
 }
 .dummyWall{
-    max-width: 2px;
-    max-height: 2px;
+    max-width: $wallThicknes;
+    max-height: $wallThicknes;
     // margin: 1px 1px;
     // background-color: #000;
 }
@@ -57,18 +60,22 @@
 .square:hover{
     background-color: rgba(255, 166, 0, 0.404);
 }
-.topSqaure, .crossedWall, .topWall{
-    background-color: rgba(0, 128, 0, 0.404);
+.topSqaure, .topWall{
+    // background-color: rgba(0, 128, 0, 0.404);
+    background-color: $correctPathColor;
 }
-.steppedSquare{
+.steppedSquare, .crossedWall{
     animation: name duration timing-function delay iteration-count direction fill-mode;
     animation: appear 100ms ease forwards ;
     animation-fill-mode: forwards;
 }
 .steppedSquare-red{
-    background-color: rgb(255, 0, 0, 0.404);
+    // background-color: rgb(255, 0, 0, 0.404);
+    background-color: #FF0060;
 }
-
+.wall{
+    // background-color: red;s
+}
 
 @media screen and (min-width: 730px){
     .board{
@@ -87,6 +94,15 @@
         background-color: rgba(255, 166, 0, 0.404);
     }
     to{
-        background-color: rgba(0, 128, 0, 0.404);
+        // background-color: rgba(0, 128, 0, 0.404);
+        background-color: $correctPathColor;
     }
 }
+
+
+/*
+app
+walls
+path
+trap
+*/

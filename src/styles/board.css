@@ -1,5 +1,5 @@
 .board {
-  border: 2px solid black;
+  border: 0.8px solid #000;
   border-top: none;
   display: flex;
   flex-direction: column;
@@ -30,17 +30,17 @@
 }
 
 .wallRow {
-  max-height: 2px;
+  max-height: 0.8px;
   max-width: 100%;
 }
 
 .verticalWall {
   height: 100%;
-  max-width: 2px;
+  max-width: 0.8px;
 }
 
 .horizontalWall {
-  max-height: 2px;
+  max-height: 0.8px;
   width: 50px;
 }
 
@@ -49,30 +49,30 @@
 }
 
 .standingWall {
-  background-color: #313131;
+  background-color: #000;
 }
 
 .dummyWall {
-  max-width: 2px;
-  max-height: 2px;
+  max-width: 0.8px;
+  max-height: 0.8px;
 }
 
 .square:hover {
   background-color: rgba(255, 166, 0, 0.404);
 }
 
-.topSqaure, .crossedWall, .topWall {
-  background-color: rgba(0, 128, 0, 0.404);
+.topSqaure, .topWall {
+  background-color: rgba(0, 128, 0, 0.75);
 }
 
-.steppedSquare {
+.steppedSquare, .crossedWall {
   animation: name duration timing-function delay iteration-count direction fill-mode;
   animation: appear 100ms ease forwards;
   animation-fill-mode: forwards;
 }
 
 .steppedSquare-red {
-  background-color: rgba(255, 0, 0, 0.404);
+  background-color: #FF0060;
 }
 
 @media screen and (min-width: 730px) {
@@ -90,6 +90,12 @@
     background-color: rgba(255, 166, 0, 0.404);
   }
   to {
-    background-color: rgba(0, 128, 0, 0.404);
+    background-color: rgba(0, 128, 0, 0.75);
   }
-}/*# sourceMappingURL=board.css.map */
+}
+/*
+app
+walls
+path
+trap
+*//*# sourceMappingURL=board.css.map */

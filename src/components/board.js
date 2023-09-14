@@ -60,7 +60,7 @@ const Board = props => {
                 rowType = 'wallRow';
             }
 
-            let row = <div className={`row ${rowType}`}>{rowItems}</div>
+            let row = <div className={`row ${rowType}`} key = {`${rowType}-${i}`}>{rowItems}</div>
             arr.push(row)
         }
         // console.log('boardSize: ', size, "sqrCount: ", sqrCount)

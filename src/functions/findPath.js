@@ -26,7 +26,7 @@ export const findPath = (x, y, visited, v_walls, h_walls, boardSize, correctPath
             if(goTop.msg === true) {
                 // console.log("up",x-2,y)
                 if(!correctPath.has(topSqaure)) correctPath.set(topSqaure, correctPath.size+1)
-                crossedWalls.add(topWall);
+                if(!crossedWalls.has(topWall)) crossedWalls.set(topWall, crossedWalls.size+1);
                 return {correctPath, visited, crossedWalls, msg: true};
             }
         }
@@ -41,7 +41,7 @@ export const findPath = (x, y, visited, v_walls, h_walls, boardSize, correctPath
             if(goLeft.msg === true) {
                 // console.log("left",x,y-2)
                 if(!correctPath.has(leftSqaure)) correctPath.set(leftSqaure, correctPath.size+1)
-                crossedWalls.add(leftWall);
+                if(!crossedWalls.has(leftWall)) crossedWalls.set(leftWall, crossedWalls.size+1);
                 return {correctPath, visited, crossedWalls, msg: true};
             }
         }
@@ -55,7 +55,7 @@ export const findPath = (x, y, visited, v_walls, h_walls, boardSize, correctPath
             if(goRight.msg === true) {
                 // console.log("right",x,y+2)
                 if(!correctPath.has(rightSqaure)) correctPath.set(rightSqaure, correctPath.size+1)
-                crossedWalls.add(rightWall);
+                if(!crossedWalls.has(rightWall)) crossedWalls.set(rightWall, crossedWalls.size+1);
                 return {correctPath, visited, crossedWalls, msg: true};
             }
             // else console.log("went right found dead end", x,y, "wall: ", v_walls.has(rightWall), "square: ", visited.has(rightSqaure))
@@ -70,7 +70,7 @@ export const findPath = (x, y, visited, v_walls, h_walls, boardSize, correctPath
             if(goBottom.msg === true) {
                 // console.log("down",x+2,y)
                 if(!correctPath.has(bottomSqaure)) correctPath.set(bottomSqaure, correctPath.size+1);
-                crossedWalls.add(bottomWall);
+                if(!crossedWalls.has(bottomWall)) crossedWalls.set(bottomWall, crossedWalls.size+1);
                 return {correctPath, visited, crossedWalls, msg: true};
             }
         }

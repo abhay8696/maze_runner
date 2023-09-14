@@ -9,4 +9,12 @@
 
 .mazeSetting {
   width: 50vw;
+}
+
+.MuiSlider-root {
+  color: rgba(0, 128, 0, 0.75) !important;
+}
+
+.MuiSlider-mark {
+  background-color: rgba(255, 255, 255, 0.25) !important;
 }/*# sourceMappingURL=maze.css.map */
