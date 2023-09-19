@@ -1,12 +1,12 @@
 @import "flexbox";
 
 .maze{
-    @include flexbox(column, center, space-between);
-    padding: 1rem;
+    @include flexbox(column, center, center);
     flex: 1;
 }
 .mazeSetting{
     width: 50vw;
+    margin-top: 0.5rem;
 }
 .MuiSlider-root{ //slider
     color: rgba(0, 128, 0, 0.75) !important;
