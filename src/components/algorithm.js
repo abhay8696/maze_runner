@@ -1,8 +1,8 @@
 import React from 'react';
 
-
 import '../styles/algorithm.css';
 
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 const algorithm1 = ()=> {
     return (
@@ -151,6 +151,12 @@ const Algorithm = () => {
         <section className='algorithm' id='algorithmSection'>
             {algorithm1()}
             {algorithm2()}
+            <a 
+                className='mazeButton'
+                href="#landingSection"
+            >
+                    <span><KeyboardArrowUpIcon/></span>
+            </a>
         </section>
     );
 };

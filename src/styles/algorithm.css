@@ -31,4 +31,30 @@
 }
 .algorithm2 .algorithm2Text {
   overflow-y: auto;
+}
+
+.mazeButton {
+  position: absolute;
+  right: 0;
+  bottom: -50vh;
+  transform: translateY(50%);
+  border: 1px solid rgba(0, 128, 0, 0.75);
+  border-radius: 4px;
+  padding: 16px 2px;
+  color: #A4BE7B;
+  background-color: rgba(0, 128, 0, 0.75);
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: all 200ms linear;
+}
+.mazeButton:hover {
+  background-color: #A4BE7B;
+  color: rgba(0, 128, 0, 0.75);
+  border-color: rgba(0, 128, 0, 0.75);
+}
+.mazeButton span {
+  animation: jump 2s infinite;
 }/*# sourceMappingURL=algorithm.css.map */

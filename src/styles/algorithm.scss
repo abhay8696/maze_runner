@@ -1,6 +1,9 @@
 @import "flexbox";
 @import 'breakpoints';
 
+$primaryColor: rgba(0, 128, 0, 0.75);
+$secondaryColor: #A4BE7B;
+
 .algorithm{
     height: 100vh;
     width: 80vw;
@@ -11,6 +14,7 @@
     @include sm-below-screen{
         width: 95vw;
     }
+    // position: relative;
 }
 
 .algorithm1, .algorithm2{
@@ -25,5 +29,33 @@
     @include flexbox(column, '', '');
     .algorithm2Text{
         overflow-y: auto;
+    }
+}
+.mazeButton{
+    position: absolute;
+    right: -0;
+    bottom: -50vh;
+    transform: translateY(50%);
+    border: 1px solid $primaryColor;
+    border-radius: 4px;
+    padding: 16px 2px;
+    color: $secondaryColor;
+    background-color: $primaryColor;
+    cursor: pointer;
+    @include flexbox(row, center, center);
+    &:hover{
+        background-color: $secondaryColor;
+        color: $primaryColor;
+        border-color: $primaryColor;
+
+    }
+    -webkit-transition: all 200ms linear;
+    -ms-transition: all 200ms linear;
+    transition: all 200ms linear;
+    // @include sm-below-screen{
+    //     bottom: 5rem;
+    // }
+    span{
+        animation: jump 2s infinite;
     }
 }
