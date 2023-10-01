@@ -9,6 +9,10 @@
 .mazeSetting {
   width: 50vw;
   margin-top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .MuiSlider-root {
@@ -17,4 +21,42 @@
 
 .MuiSlider-mark {
   background-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.algorithmButton {
+  position: absolute;
+  right: -5vw;
+  bottom: 2rem;
+  border: 1px solid rgba(0, 128, 0, 0.75);
+  border-radius: 4px;
+  padding: 4px 8px;
+  color: rgba(0, 128, 0, 0.75);
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: all 200ms linear;
+}
+.algorithmButton:hover {
+  background-color: rgba(0, 128, 0, 0.75);
+  color: #A4BE7B;
+  border-color: #A4BE7B;
+}
+@media only screen and (max-width: 480px) {
+  .algorithmButton {
+    bottom: 5rem;
+  }
+}
+.algorithmButton span {
+  animation: jump 2s infinite;
+}
+
+@keyframes jump {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
 }/*# sourceMappingURL=maze.css.map */

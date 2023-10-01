@@ -82,7 +82,36 @@ export const findPath = (x, y, visited, v_walls, h_walls, boardSize, correctPath
 }
 
 
-
+/*
+function findPath()
+    if current cell is at top row
+        return true
+    add current cell to visited array
+    check top
+        if current cell doesnt have top wall and cell above current cell is not visited
+            let msg = call function findPath with above cell
+            if msg is true
+                return true
+        goto: check left
+    check left
+        if current cell doesnt have left wall and cell left to the current cell is not visited
+            let msg = call function findPath with left cell
+            if msg is true
+                return true
+        goto: check right
+    check right
+        if current cell doesnt have right wall and cell right to the current cell is not visited
+            let msg = call function findPath with right cell
+            if msg is true
+                return true
+        goto: check bottom
+    check bottom
+        if current cell doesnt have bottom wall and cell bottom to the current cell is not visited
+            let msg = call function findPath with bottom cell
+            if msg is true
+                return true
+        return false
+*/
 
 
 /*

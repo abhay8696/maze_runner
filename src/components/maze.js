@@ -8,6 +8,7 @@ import { createMaze } from '../functions/createWalls';
 
 import { Slider } from '@mui/material';
 import '../styles/maze.css';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const Maze = () => {
     const [size, setSize] = useState(15);
@@ -37,7 +38,7 @@ const Maze = () => {
                 {/* <div></div> */}
                 <Board size = {size} standing_Vertical_Walls={verticalWalls} standing_Horizontal_Walls={horizontalWalls}/>
                 <div className='mazeSetting'>
-                    <span>{size} x {size}</span>
+                    {/* <span className='number'>{size} x {size}</span> */}
                     <Slider
                         aria-label="Temperature"
                         defaultValue={size}
@@ -50,6 +51,13 @@ const Maze = () => {
                         onChange={e=> setSize(e.target.value)}
                         // color="danger"
                     />
+                    <a 
+                        className='algorithmButton'
+                        href="#algorithmSection"
+                    >
+                            Algorithm
+                            <span><KeyboardArrowDownIcon/></span>
+                    </a>
                 </div>
             </FollowedPathContext.Provider>
         </main>
