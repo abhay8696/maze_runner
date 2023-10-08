@@ -3,13 +3,16 @@
 $wallThicknes : 0.8px;
 $wallColor: #000;
 $correctPathColor: rgba(0, 128, 0, 0.75);
+$secondaryColor: #A4BE7B;
 
 .board{
     border: $wallThicknes solid $wallColor;
     border-top: none;
+    background-color: $secondaryColor;
     @include flexbox(column, stretch, stretch);
     max-height: 80vh;
     aspect-ratio: 1;
+    z-index: 5;
 }
 
 

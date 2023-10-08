@@ -35,7 +35,7 @@ const Maze = () => {
     return (
         <main className='maze'>
             <FollowedPathContext.Provider value={[followedPath, setFollowedPath]}>
-                {/* <div></div> */}
+                <div className='userMsg'>Click / Double tap anywhere in maze</div>
                 <Board size = {size} standing_Vertical_Walls={verticalWalls} standing_Horizontal_Walls={horizontalWalls}/>
                 <div className='mazeSetting'>
                     {/* <span className='number'>{size} x {size}</span> */}

@@ -1,12 +1,14 @@
 .board {
   border: 0.8px solid #000;
   border-top: none;
+  background-color: #A4BE7B;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   justify-content: stretch;
   max-height: 80vh;
   aspect-ratio: 1;
+  z-index: 5;
 }
 
 .row {
