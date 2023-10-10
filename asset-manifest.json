@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/maze_runner/static/css/main.92df2689.css",
+    "main.css": "/maze_runner/static/css/main.2f3b6096.css",
     "main.js": "/maze_runner/static/js/main.a361edb9.js",
     "static/js/787.5945ca3b.chunk.js": "/maze_runner/static/js/787.5945ca3b.chunk.js",
     "index.html": "/maze_runner/index.html",
-    "main.92df2689.css.map": "/maze_runner/static/css/main.92df2689.css.map",
+    "main.2f3b6096.css.map": "/maze_runner/static/css/main.2f3b6096.css.map",
     "main.a361edb9.js.map": "/maze_runner/static/js/main.a361edb9.js.map",
     "787.5945ca3b.chunk.js.map": "/maze_runner/static/js/787.5945ca3b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.92df2689.css",
+    "static/css/main.2f3b6096.css",
     "static/js/main.a361edb9.js"
   ]
 }
