@@ -80,15 +80,34 @@ $secondaryColor: #A4BE7B;
     // background-color: red;s
 }
 
-@media screen and (min-width: 730px){
+@media screen and (min-width: 1000px){
     .board{
         max-width: 50vw;
     }
 }
-
-@media screen and (max-width: 729px){
+@media only screen and (min-width: 875.1px) {
+    .board{
+        max-width: 60vw;
+    }
+}
+@media only screen and (max-width: 875px) and (min-width: 810.1px) {
+    .board{
+        max-width: 65vw;
+    }
+}
+@media only screen and (max-width: 810px) and (min-width: 761px) {
+    .board{
+        max-width: 70vw;
+    }
+}
+@media only screen and (max-width: 760.9px) and (min-width: 630.1px) {
     .board{
         max-width: 75vw;
+    }
+}
+@media screen and (max-width: 630px){
+    .board{
+        max-width: 90vw;
     }
 }
 

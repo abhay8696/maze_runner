@@ -7,7 +7,7 @@ $secondaryColor: #A4BE7B;
 $tertiaryColor: rgba(255, 166, 0, 0.404);
 
 .maze{
-    @include flexbox(column, center, center);
+    @include flexbox(column, center, flex-start);
     flex: 1;
 }
 
@@ -16,6 +16,9 @@ $tertiaryColor: rgba(255, 166, 0, 0.404);
     margin-top: 0.5rem;
     @include flexbox(row, center, center);
     z-index: 10;
+    @media screen and (max-width: 580px){ //mobile devices
+        flex-direction: column;
+    }
 }
 .MuiSlider-root{ //slider
     color: $primaryColor !important;
@@ -26,6 +29,10 @@ $tertiaryColor: rgba(255, 166, 0, 0.404);
 
 .algorithmButton{
     position: absolute;
+    @media screen and (max-width: 580px){ //mobile devices
+        position: static;
+        margin-top: 1rem;
+    }
     right: -5vw;
     bottom: 2rem;
     border: 1px solid $primaryColor;
@@ -50,6 +57,7 @@ $tertiaryColor: rgba(255, 166, 0, 0.404);
         animation: jump 2s infinite;
     }
 }
+
 
 @keyframes jump {
     0%, 100%{
