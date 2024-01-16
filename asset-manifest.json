@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/maze_runner/static/css/main.2f3b6096.css",
-    "main.js": "/maze_runner/static/js/main.7605f1af.js",
+    "main.css": "/maze_runner/static/css/main.f087aa45.css",
+    "main.js": "/maze_runner/static/js/main.feb8c022.js",
     "static/js/787.5945ca3b.chunk.js": "/maze_runner/static/js/787.5945ca3b.chunk.js",
+    "static/media/footSteps2.svg": "/maze_runner/static/media/footSteps2.ea0238e74656b5f626bff01208df173d.svg",
     "index.html": "/maze_runner/index.html",
-    "main.2f3b6096.css.map": "/maze_runner/static/css/main.2f3b6096.css.map",
-    "main.7605f1af.js.map": "/maze_runner/static/js/main.7605f1af.js.map",
+    "main.f087aa45.css.map": "/maze_runner/static/css/main.f087aa45.css.map",
+    "main.feb8c022.js.map": "/maze_runner/static/js/main.feb8c022.js.map",
     "787.5945ca3b.chunk.js.map": "/maze_runner/static/js/787.5945ca3b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2f3b6096.css",
-    "static/js/main.7605f1af.js"
+    "static/css/main.f087aa45.css",
+    "static/js/main.feb8c022.js"
   ]
 }
